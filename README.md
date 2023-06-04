@@ -1,33 +1,35 @@
 # CSB310-Alternative-Language
 
 ## Implementation
-The programming language I used is JavaScript. JavaScript is a popular programming language that is widely used for both front-end and back-end web development. It is well-suited for this task as it provides built-in support for object-oriented programming, file ingestion, conditional statements, assignment statements, loops, subprograms (functions/methods), unit testing, and exception handling.
+The implementation of this project utilizes JavaScript, a widely-used programming language known for its versatility in both front-end and back-end web development. JavaScript offers robust features such as object-oriented programming, file ingestion, conditional statements, assignment statements, loops, subprograms (functions/methods), unit testing, and exception handling, making it an ideal choice for this task.
 
 ### Object-oriented programming:
-JavaScript supports object-oriented programming (OOP) through its prototype-based inheritance model. Objects can be created using constructor functions or object literals, and methods can be added to objects using prototype or class syntax.
+
+JavaScript embraces object-oriented programming by employing a prototype-based inheritance model. In JavaScript, objects can be instantiated using constructor functions or object literals. Additionally, methods can be attached to objects using either prototype-based syntax or the modern class syntax.
 
 ### File ingestion:
-JavaScript provides the FileReader API, which allows reading file content from the user's device. This is useful for file ingestion tasks, such as reading CSV files for processing.
+
+JavaScript includes the FileReader API, which facilitates the reading of file content directly from the user's device. This feature proves particularly valuable for file ingestion operations, such as parsing and processing CSV files. By utilizing the FileReader API, JavaScript enables seamless integration with the user's file system, ensuring efficient and convenient file handling capabilities.
 
 ### onditional statements:
 JavaScript supports conditional statements like if-else, switch-case, and ternary operators. These statements allow for conditional execution of code based on different conditions.
 
 ### Assignment statements:
-JavaScript supports assignment statements to assign values to variables or object properties. Variables can be assigned values using the assignment operator "=".
+JavaScript offers assignment statements for assigning values to variables or object properties. Variables can be assigned values using the assignment operator "=".
 
 ### Loops:
-JavaScript provides different loop constructs, such as for loop, while loop, and do-while loop, for iterative execution of code blocks.
+JavaScript provides various loop constructs, such as the for loop, while loop, and do-while loop, for iterative execution of code blocks. Loops enable repetitive operations and efficient processing of data.
 
 ### Subprograms (functions/methods):
-JavaScript supports defining and using functions. Functions can be defined using function declarations or function expressions. They can accept parameters, perform specific tasks, and return values.
+JavaScript supports defining and using functions, which are referred to as subprograms in this context. Functions can be defined using function declarations or function expressions. They can accept parameters, perform specific tasks, and return values, promoting modularity and code reusability.
 
 ### Unit testing and exception handling:
-JavaScript has various testing frameworks and libraries available for unit testing, such as Jest, Mocha, and Jasmine. These frameworks provide features for writing and executing tests to ensure the correctness of the code. JavaScript also has built-in exception handling mechanisms using try-catch blocks for handling and managing errors.
+JavaScript offers a range of testing frameworks and libraries for unit testing, including popular options like Jest, Mocha, and Jasmine. These frameworks facilitate the creation and execution of tests to ensure code correctness. JavaScript also provides built-in exception handling mechanisms, utilizing try-catch blocks to handle and manage errors effectively.
 
-## Library
-In this project, I didn't use any libraries. The decision to not use any libraries in JavaScript for this project was based on several factors. The project requirements are relatively simple and can be achieved using built-in JavaScript functionality, there may be no need to introduce additional libraries. Furthermore, I was using TextEdit to write codes so it was more complicated trying to install libraries.
+### Library
+No external libraries were utilized in this project. The decision to refrain from incorporating additional JavaScript libraries was based on several factors. The project requirements were relatively straightforward and achievable using the built-in functionality of JavaScript. Additionally, the use of libraries would have added unnecessary complexity, especially considering the development environment used (TextEdit).
 
-## Note
+### Note
 Once you open the html file, all the tests are already run through console as showed in the image below:
 ![Tests](https://github.com/YenTonv/CSB310-Alternative-Language/assets/92559627/f85d3a5d-7742-4dc2-9212-46ca8dbd1e8a)
 
