@@ -40,26 +40,12 @@
         // Set the Cell object in the cellMap using row as the key
         cellMap.set(row, cell);
     }
-
-
-
-    // Iterate over the values of the cellMap
-  for (const [rowId, cell] of cellMap.entries()) {
-    document.getElementById("answer").innerHTML += "<p> Item " + rowId + "</p>";
-    document.getElementById("answer").innerHTML += "<p>" + cell.toString() + "</p>";
-    document.getElementById("answer").innerHTML += "<p> Bodyweight percentile: " + cell.calculateBodyWeightPercentile(cellMap) + "</p>";
-    document.getElementById("answer").innerHTML += "<p> Is it still available? " + cell.isThisPhoneStillAvailable() + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that has the same OEM? " + cell.countSameOEMCells(cellMap) + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that has the same model? " + cell.countSameModelCells(cellMap) + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that was launched the same year? " + cell.countSameLaunchYearCells(cellMap) + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that has the same bodySim? " + cell.countSameBodySimCells(cellMap) + "</p>";;
-  }
     
     return cellMap;
   }
             
   // Helper functions for data transformations
-
+  //find 4 continuous digit, then change them to integer 
   function transformToIntegerYear(value) {
     const yearRegex = /\d{4}/;
     const yearMatch = value.match(yearRegex);
@@ -69,6 +55,7 @@
     return null;
   }
 
+  //find 4 continuous digit, then replace the original data with the 4 digits, if these are not found, but return null unless data is "discontinied" or "canceled"
   function transformToYearOrStatus(value) {
     const yearRegex = /\d{4}/;
     const yearMatch = value.match(yearRegex);
@@ -81,7 +68,8 @@
       return null;
     }
   }
-
+  
+  //find digits before "g" and change them to float
   function transformToFloatGrams(value) {
     const gramsRegex = /(\d+(\.\d+)?)\s*g\b/;
     const gramsMatch = value.match(gramsRegex);
@@ -93,6 +81,7 @@
     }
   }
 
+  //handle invalid value
   function handleNoValue(value) {
     if (value === "No" || value === "Yes") {
       return null;
@@ -101,6 +90,7 @@
     }
   }
 
+  //find digits before inches, change them to float
   function transformToFloatInches(value) {
     const inchesRegex = /(\d+(\.\d+)?)\s*inches\b/;
     const inchesMatch = value.match(inchesRegex);
@@ -112,6 +102,7 @@
     }
   }
 
+  //handle invalid value
   function handleInvalidValue(value) {
     if (/^\d+(\.\d+)?$/.test(value)) {
       return null;
@@ -120,6 +111,7 @@
     }
   }
 
+  //shorten data
   function shortenPlatformOS(value) {
     if (/^\d+(\.\d+)?$/.test(value)) {
       return null;
@@ -133,6 +125,8 @@
     }
   }
 
+  //count any cells that has only one sensor
+  //runtime O(n)
   function countPhonesWithOneSensor(cellMap) {
     let count = 0;
 
@@ -145,6 +139,8 @@
   return count;
   }
 
+  //find the highest average phone's body weight of each company
+  //runtime O(n)
   function highestAverageWeight(cellMap){
     const weightMap = new Map();
 
@@ -181,7 +177,8 @@
     console.log(`Average weight: ${highestAverageWeight}`);
   }
 
-
+  //find phones that have different announced and released years
+  //runtime O(n)
   function differentYearAnnouncedReleased(cellMap){
     // Array to store phones with different announcement and release years
     const phonesWithDifferentYears = [];
@@ -206,18 +203,15 @@
         console.log("Phones with different announcement and release years:");
         for (const phone of phonesWithDifferentYears) {
           console.log(`OEM: ${phone.oem}, Model: ${phone.model}`);
-          console.log(`Announced Year: ${phone.launchAnnounced}, Release Year: ${phone.launchStatus}`);
+          console.log(`   Announced Year: ${phone.launchAnnounced}, Release Year: ${phone.launchStatus}`);
         }
       } else {
         console.log("No phones were announced in one year and released in another.");
       }
-      console.log(phonesWithDifferentYears);
-
-      //To determine how many phones have only one feature sensor
-      console.log("Phones that have only one sensor:");
-      console.log(countPhonesWithOneSensor(cellMap));
   }
 
+  //find the year that has the most phones launced
+  //runtime O(n)
   function findYearWithMostPhonesLaunched(cellMap) {
     const counter = {};
     // Iterate over the cellMap to count phones launched in each year

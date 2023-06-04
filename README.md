@@ -28,22 +28,10 @@ JavaScript has various testing frameworks and libraries available for unit testi
 In this project, I didn't use any libraries. The decision to not use any libraries in JavaScript for this project was based on several factors. The project requirements are relatively simple and can be achieved using built-in JavaScript functionality, there may be no need to introduce additional libraries. Furthermore, I was using TextEdit to write codes so it was more complicated trying to install libraries.
 
 ## Note
-Once you open the html file, all the tests are already run through console. The page then will ask you to input a file through browse. I reccommend you run the test.csv (located in the same folder) first to see the output on the page like the image below:
+Once you open the html file, all the tests are already run through console as showed in the image below:
 
 
-When you run the cell.csv, due to the large volumn of data, it will be quicker if you disenable the following code in Utilities.js:
-
-    // Iterate over the values of the cellMap
-  /*for (const [rowId, cell] of cellMap.entries()) {
-    document.getElementById("answer").innerHTML += "<p> Item " + rowId + "</p>";
-    document.getElementById("answer").innerHTML += "<p>" + cell.toString() + "</p>";
-    document.getElementById("answer").innerHTML += "<p> Bodyweight percentile: " + cell.calculateBodyWeightPercentile(cellMap) + "</p>";
-    document.getElementById("answer").innerHTML += "<p> Is it still available? " + cell.isThisPhoneStillAvailable() + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that has the same OEM? " + cell.countSameOEMCells(cellMap) + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that has the same model? " + cell.countSameModelCells(cellMap) + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that was launched the same year? " + cell.countSameLaunchYearCells(cellMap) + "</p>";;
-    document.getElementById("answer").innerHTML += "<p> How many cell that has the same bodySim? " + cell.countSameBodySimCells(cellMap) + "</p>";;
-  }*/
+The page then will ask you to input a cell.csv file through browser. The file is located in the same folder. When you run the cell.csv, the page will show the first 20 cells only. This is intentional due to the large volumn of the file. However, the file will be run through console.log and you will find the answer to the questions below there.
 
 The answer for the following questions will be located in console.  
 ## What company (oem) has the highest average weight of the phone body?
