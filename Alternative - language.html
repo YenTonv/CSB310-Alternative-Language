@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<script src="Cell.js"></script>
+<script src="Utilities.js"></script>
+<script src="UtilitiesTest.js"></script>
+<script src="CellTest.js"></script> 
+
+<body>
+
+  <p>Alternative Language</p>
+  <form id="myForm">
+      <input type="file" id="csvFile" accept=".csv" />
+      <br />
+      <input type="submit" value="Submit" />
+   </form>
+   <div id = "answer" ></div>
+
+  <script>
+
+const myForm = document.getElementById("myForm");
+const csvFile = document.getElementById("csvFile");
+
+myForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const input = csvFile.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const text = e.target.result;
+    var cellMap = processData(text);
+    //finding the company that has the highest average body weight of the phone body
+    highestAverageWeight(cellMap);
+
+    //finding phones that was announced and released in different year
+    differentYearAnnouncedReleased(cellMap);
+    
+    //finding the year that has the most launched phone in 2000s
+    const yearsWithMostPhonesLaunched = findYearWithMostPhonesLaunched(cellMap);
+    console.log("Years with the most phones launched in the 2000s:", yearsWithMostPhonesLaunched);
+
+    
+  };
+  reader.readAsText(input);
+});
+
+
+
+  </script>
+
+
+</body>
+
+</html>

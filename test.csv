@@ -1,0 +1,6 @@
+oem,model,launch_announced,launch_status,body_dimensions,body_weight,body_sim,display_type,display_size,display_resolution,features_sensors,platform_os
+Benefon,Vega,1999,Discontinued,145 x 56 x 23 mm (5.71 x 2.20 x 0.91 in),190 g (6.70 oz),Mini-SIM,Monochrome graphic,,6 lines,V1,
+Garmin-Asus,nuvifone M10,"2010, January. Released 2010, March",Discontinued,-,-,Mini-SIM,"TFT resistive touchscreen, 65K colors","3.5 inches, 34.9 cm","480 x 800 pixels, 5:3 ratio (~267 ppi density)",Accelerometer,Microsoft Windows Mobile 6.5.3 Professional
+Google,Pixel 3a,"2019, May 07","Available. Released 2019, May 15",151.3 x 70.1 x 8.2 mm (5.96 x 2.76 x 0.32 in),147 g (5.19 oz),Nano-SIM,"OLED capacitive touchscreen, 16M colors","5.6 inches, 79.6 cm (~75.0% screen-to-body ratio)","1080 x 2220 pixels, 18.5:9 ratio (~441 ppi density)","Fingerprint (rear-mounted), accelerometer, gyro, proximity, compass, barometer","Android 9.0 (Pie), upgradable to Android 10"
+Haier,P5,2003,Discontinued,135 x 28 x 18 mm (5.31 x 1.10 x 0.71 in),300 g (2.65 oz),Mini-SIM,Monochrome,,"64 x 102 pixels, 16:10 ratio",V1,
+Haier,Z8000,2004,Discontinued,83 x 44 x 23.8 mm (3.27 x 1.73 x 0.94 in),458 g (3.17 oz),Mini-SIM,4096 colors,,"128 x 128 pixels, 1:1 ratio",V1,
