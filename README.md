@@ -11,7 +11,7 @@ JavaScript embraces object-oriented programming by employing a prototype-based i
 
 JavaScript includes the FileReader API, which facilitates the reading of file content directly from the user's device. This feature proves particularly valuable for file ingestion operations, such as parsing and processing CSV files. By utilizing the FileReader API, JavaScript enables seamless integration with the user's file system, ensuring efficient and convenient file handling capabilities.
 
-### onditional statements:
+### Conditional statements:
 JavaScript supports conditional statements like if-else, switch-case, and ternary operators. These statements allow for conditional execution of code based on different conditions.
 
 ### Assignment statements:
