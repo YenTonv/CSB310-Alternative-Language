@@ -20,7 +20,7 @@ function testTransformToIntegerYear() {
 function testTransformToYearOrStatus() {
   const value1 = "2022";
   const result1 = transformToYearOrStatus(value1);
-  console.log(`testTransformToYearOrStatus with 2022: ${result1}`);
+  console.log(`testTransformToYearOrStatus with input of 2022: ${result1}`);
   console.log(result1 === "2022"); // Expected output: true
 
   const value2 = "Discontinued";
@@ -33,8 +33,13 @@ function testTransformToYearOrStatus() {
 function testTransformToFloatGrams() {
   const value = "150.5 g";
   const result = transformToFloatGrams(value);
-  console.log(`testTransformToFloatGrams: ${result}`);
+  console.log(`testTransformToFloatGrams with regular input: ${result}`);
   console.log(result === 150.5); // Expected output: true
+
+  const value1 = "-";
+  const result1 = transformToFloatGrams(value1);
+  console.log(`testTransformToFloatGrams with hyphen input: ${result1}`);
+  console.log(result1 === null); // Expected output: true
 
 }
 

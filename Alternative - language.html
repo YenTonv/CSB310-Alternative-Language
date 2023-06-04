@@ -13,10 +13,14 @@
       <br />
       <input type="submit" value="Submit" />
    </form>
+   <div id = "answer" >
+      Here are the cells from the file (at most 20):
+   </div>
    <div id = "answer" ></div>
 
   <script>
 
+document.getElementById("answer").innerHTML = ""; // clear answer in case there's anything left from last run
 const myForm = document.getElementById("myForm");
 const csvFile = document.getElementById("csvFile");
 
@@ -28,15 +32,33 @@ myForm.addEventListener("submit", function (e) {
   reader.onload = function (e) {
     const text = e.target.result;
     var cellMap = processData(text);
+
+    document.getElementById("answer").innerHTML += "<p> Here are the first cells from the file (at most 20): </p>";
+      // Write to web page the first 20 cells
+    for (const [rowId, cell] of cellMap.entries()) {
+      document.getElementById("answer").innerHTML += "<p> Item " + rowId + "</p>";
+      document.getElementById("answer").innerHTML += "<p>" + cell.toString() + "</p>";
+      document.getElementById("answer").innerHTML += "<p> Bodyweight percentile: " + cell.calculateBodyWeightPercentile(cellMap) + "</p>";
+      document.getElementById("answer").innerHTML += "<p> Is it still available? " + cell.isThisPhoneStillAvailable() + "</p>";;
+      document.getElementById("answer").innerHTML += "<p> How many cell that has the same OEM? " + cell.countSameOEMCells(cellMap) + "</p>";;
+      document.getElementById("answer").innerHTML += "<p> How many cell that has the same model? " + cell.countSameModelCells(cellMap) + "</p>";;
+      document.getElementById("answer").innerHTML += "<p> How many cell that was launched the same year? " + cell.countSameLaunchYearCells(cellMap) + "</p>";;
+      document.getElementById("answer").innerHTML += "<p> How many cell that has the same bodySim? " + cell.countSameBodySimCells(cellMap) + "</p>";;
+      // Only print at most 20 rows, otherwise web page would freeze
+      if (rowId >= 20) break;
+    }
+
     //finding the company that has the highest average body weight of the phone body
     highestAverageWeight(cellMap);
 
     //finding phones that was announced and released in different year
     differentYearAnnouncedReleased(cellMap);
+
+    //To determine how many phones have only one feature sensor
+    console.log("Phones that have only one sensor:", countPhonesWithOneSensor(cellMap));
     
     //finding the year that has the most launched phone in 2000s
-    const yearsWithMostPhonesLaunched = findYearWithMostPhonesLaunched(cellMap);
-    console.log("Years with the most phones launched in the 2000s:", yearsWithMostPhonesLaunched);
+    console.log("Years with the most phones launched in the 2000s:", findYearWithMostPhonesLaunched(cellMap));
 
     
   };
